@@ -1,0 +1,13 @@
+html,
+body {
+  height: 100%;
+  background-color: #f3a530;
+  color: #fff;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

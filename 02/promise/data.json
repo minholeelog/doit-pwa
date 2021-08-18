@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "name": "이민호", "age": 31, "email": "aidenlee@g.com" },
+    { "name": "정윤영", "age": 31, "email": "jeongyy@m.com" },
+    { "name": "박용민", "age": 31, "email": "parkym@k.com" }
+  ]
+}
