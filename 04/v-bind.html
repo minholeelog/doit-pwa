@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1 v-bind:class="color">안녕하세요</h1>
+      <input :value="currentDate" />
+    </div>
+    <script>
+      new Vue({
+        el: '#root',
+        data: {
+          currentDate: '올해 년도: ' + new Date().getFullYear(),
+          color: 'blue',
+        },
+      })
+    </script>
+  </body>
+</html>
