@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>methods</title>
+  </head>
+  <body>
+    <div id="root">
+      <p>클릭 숫자: {{ clicks }}</p>
+      <p>카운트다운: {{ counter }}</p>
+      <button @click="increment">눌러주세요!</button>
+    </div>
+    <!-- Vue.js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      new Vue({
+        el: '#root',
+        data: {
+          clicks: 0,
+        },
+        computed: {
+          counter() {
+            return 10 - this.clicks
+          },
+        },
+        methods: {
+          increment() {
+            this.clicks++
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

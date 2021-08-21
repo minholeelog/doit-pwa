@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>props</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>좋아하는 과일!</h1>
+      <ol>
+        <favorite-fruits
+          v-for="fruit in fruits"
+          :fruit="fruit"
+          :key="fruit.id"
+        />
+      </ol>
+    </div>
+    <!-- Vue.js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      Vue.component('favorite-fruits', {
+        //props 단축
+        // props: ['fruit'],
+        props: {
+          fruit: {
+            type: Object,
+          },
+        },
+        template: `
+            <li>{{ fruit.text }}</li>
+        `,
+      })
+      new Vue({
+        el: '#root',
+        data: {
+          fruits: [
+            { id: 0, text: '사과' },
+            { id: 1, text: '오렌지' },
+            { id: 2, text: '수박' },
+          ],
+        },
+      })
+    </script>
+  </body>
+</html>

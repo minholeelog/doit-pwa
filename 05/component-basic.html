@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>component</title>
+    <style>
+      .fruit {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding-left: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1>{{ title }}</h1>
+      <favorite-fruits></favorite-fruits>
+    </div>
+    <!-- Vue.js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      Vue.component('favorite-fruits', {
+        data() {
+          return {
+            fruits: [{ name: '사과' }, { name: '오렌지' }, { name: '수박' }],
+          }
+        },
+        template: `
+            <div>
+                <div v-for="fruit in fruits" class="fruit">
+                    <p>좋아하는 과일: {{ fruit.name }}</p>
+                </div>    
+            </div>
+        `,
+      })
+      new Vue({
+        el: '#root',
+        data: {
+          title: '안녕하세요!',
+        },
+      })
+    </script>
+  </body>
+</html>
